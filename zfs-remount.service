@@ -1,0 +1,11 @@
+[Unit]
+Description=Restart zfs-mount
+Before=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=+/bin/systemctl restart zfs-mount
+RemainAfterExit=no
+
+[Install]
+WantedBy=multi-user.target
